@@ -73,8 +73,8 @@ unzip ~/.temp/SpotifyInstaller.zip
 open Install\ Spotify.app
 
 # Git configuration
-git config --global user.name ""
-git config --global user.email ""
+git config --global user.name "YOUR_NAME"
+git config --global user.email "YOUR_EMAIL"
 git config --global core.editor nano
 
 # Python
