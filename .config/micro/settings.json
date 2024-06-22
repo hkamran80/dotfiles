@@ -1,0 +1,7 @@
+{
+    "*.ts": {
+        "commenttype": "// %s"
+    },
+    "mkparents": true,
+    "tabsize": 2
+}
