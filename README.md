@@ -10,12 +10,14 @@ For a guide on GNU Stow, check out [the video by Dreams of Autonomy](https://www
 - fzf
 - Oh My Posh
 - Stow
+- tmux
 
 ## Configuration
 
 - Zsh
 - micro
 - Oh My Posh
+- tmux
 
 ## Usage
 
