@@ -6,10 +6,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 ## zinit
-# Set the directory for zinit and its plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
    mkdir -p "$(dirname $ZINIT_HOME)"
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -49,11 +47,7 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 ## Styling
-if [[ "$OSTYPE" == "darwin"* ]]; then
-	eval "$(gdircolors -b ~/.config/dircolors)"
-else
-	eval "$(dircolors -b ~/.config/dircolors)"
-fi
+export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
