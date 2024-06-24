@@ -31,6 +31,13 @@ For a guide on GNU Stow, check out [the video by Dreams of Autonomy](https://www
 	brew install fzf oh-my-posh stow vivid zoxide
 	```
 
-	On macOS, install `coreutils` as well: `brew install coreutils`
-
 3. Enter the directory and run `stow .` to create the symlinks
+
+### macOS
+
+- `coreutils` needs to be installed to better support `ls` colours.
+- `/bin/stty` needs to be aliased to `~/.bin/stty`:
+
+	```bash
+	ln -s /bin/stty ~/.bin
+	```
