@@ -7,7 +7,6 @@ console_title_template: "{{ .Shell }} in {{ .Folder }}"
 blocks:
   - type: prompt
     alignment: left
-    filler: "·"
     newline: true
     segments:
       - type: path
@@ -30,13 +29,14 @@ blocks:
 
   - type: prompt
     alignment: right
+    filler: "<darkGray>·</>"
     overflow: hidden
     segments:
       - type: executiontime
         style: plain
         background: transparent
         foreground: yellow
-        template: "{{ .FormattedMs }}"
+        template: " {{ .FormattedMs }}"
         properties:
           threshold: 5000
 
