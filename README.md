@@ -12,6 +12,7 @@ For a guide on GNU Stow, check out [the video by Dreams of Autonomy](https://www
 - GNU Stow
 - tmux
 - vivid
+- zoxide
 
 ## Configuration
 
@@ -26,8 +27,10 @@ For a guide on GNU Stow, check out [the video by Dreams of Autonomy](https://www
 1. Clone the repository to your home folder using Git
 2. Install the requirements
 
-	```zsh
-brew install fzf oh-my-posh stow vivid
+	```bash
+	brew install fzf oh-my-posh stow vivid zoxide
 	```
+
+	On macOS, install `coreutils` as well: `brew install coreutils`
 
 3. Enter the directory and run `stow .` to create the symlinks
