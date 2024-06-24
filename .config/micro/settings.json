@@ -2,6 +2,7 @@
     "*.ts": {
         "commenttype": "// %s"
     },
+    "colorcolumn": 100,
     "mkparents": true,
     "tabsize": 2
 }
