@@ -1,3 +1,9 @@
 [submodule ".tmux/plugins/tmux-fzf"]
 	path = .tmux/plugins/tmux-fzf
 	url = https://github.com/sainnhe/tmux-fzf
+[submodule ".tmux/plugins/tmux-powerline"]
+	path = .tmux/plugins/tmux-powerline
+	url = https://github.com/ericw/tmux-powerline
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
