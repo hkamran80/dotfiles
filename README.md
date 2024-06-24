@@ -36,8 +36,3 @@ For a guide on GNU Stow, check out [the video by Dreams of Autonomy](https://www
 ### macOS
 
 - `coreutils` needs to be installed to better support `ls` colours.
-- `/bin/stty` needs to be aliased to `~/.bin/stty`:
-
-	```bash
-	ln -s /bin/stty ~/.bin
-	```

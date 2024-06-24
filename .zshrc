@@ -65,11 +65,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
-export PATH="~/.bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 ## Aliases
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	alias ls='gls --color'
+	alias stty=/bin/stty
 else
 	alias ls='ls --color'
 fi
