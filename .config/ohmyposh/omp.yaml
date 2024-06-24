@@ -36,7 +36,7 @@ blocks:
         style: plain
         foreground: red
         background: transparent
-        template: "  {{ .Code }}"
+        template: "  {{ .Code }} ({{ reason .Code }})"
       
       - type: executiontime
         style: plain
