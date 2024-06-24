@@ -49,14 +49,34 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 ## Styling
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	eval "$(gdircolors -b ~/.config/dircolors)"
+else
+	eval "$(dircolors -b ~/.config/dircolors)"
+fi
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	zstyle ':fzf-tab:complete:cd:*' fzf-preview 'gls --color $realpath'
+	zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'gls --color $realpath'
+else
+	zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+	zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+fi
+
+## Path
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+fi
 
 ## Aliases
-alias ls='ls --color'
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	alias ls='gls --color'
+else
+	alias ls='ls --color'
+fi
 
 ## Shell integrations
 eval "$(fzf --zsh)"
