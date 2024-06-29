@@ -13,6 +13,7 @@ For a guide on GNU Stow, check out [the video by Dreams of Autonomy](https://www
 - tmux
 - vivid
 - zoxide
+- btop
 
 ## Configuration
 
@@ -21,6 +22,7 @@ For a guide on GNU Stow, check out [the video by Dreams of Autonomy](https://www
 - Oh My Posh
 - tmux
 - `LS_COLORS`
+- btop
 
 ## Usage
 
