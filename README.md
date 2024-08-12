@@ -23,10 +23,16 @@ For a guide on GNU Stow, check out [the video by Dreams of Autonomy](https://www
 - tmux
 - `LS_COLORS`
 - btop
+- Hyper
 
 ## Usage
 
-1. Clone the repository to your home folder using Git
+1. Clone the repository to your home folder
+
+   ```bash
+   git clone https://github.com/hkamran80/dotfiles .dotfiles
+   ```
+
 2. Install the requirements
 
 	```bash
@@ -37,4 +43,4 @@ For a guide on GNU Stow, check out [the video by Dreams of Autonomy](https://www
 
 ### macOS
 
-- `coreutils` needs to be installed to better support `ls` colours.
+- `coreutils` needs to be installed to support `ls` colours via `gls`.
