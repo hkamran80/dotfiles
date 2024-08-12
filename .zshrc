@@ -1,3 +1,9 @@
+## User Configuration Files
+ALIASES_FILE="${HOME}/.aliasesrc"
+PATH_FILE="${HOME}/.pathrc"
+EXPORTS_FILE="${HOME}/.exportsrc"
+PROGRAMS_FILE="${HOME}/.programsrc"
+
 ## Homebrew
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -67,12 +73,30 @@ fi
 
 export PATH="$HOME/.bin:$PATH"
 
+if [[ -f "$PATH_FILE" ]]; then
+    source $PATH_FILE
+fi
+
 ## Aliases
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	alias ls='gls --color'
 	alias stty=/bin/stty
 else
 	alias ls='ls --color'
+fi
+
+if [[ -f "$ALIASES_FILE" ]]; then
+    source $ALIASES_FILE
+fi
+
+## Exports
+if [[ -f "$EXPORTS_FILE" ]]; then
+    source $EXPORTS_FILE
+fi
+
+## Programs
+if [[ -f "$PROGRAMS_FILE" ]]; then
+    source $PROGRAMS_FILE
 fi
 
 ## Shell integrations
