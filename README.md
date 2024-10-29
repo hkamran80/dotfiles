@@ -2,8 +2,6 @@
 
 These are my dotfiles for macOS and Linux systems.
 
-For a guide on GNU Stow, check out [the video by Dreams of Autonomy](https://www.youtube.com/watch?v=y6XCebnB9gs).
-
 ## Tools
 
 | Name | Description | Notes |
