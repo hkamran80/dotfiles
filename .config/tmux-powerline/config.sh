@@ -272,7 +272,7 @@
 
 # pwd.sh {
 	# Maximum length of output.
-	export TMUX_POWERLINE_SEG_PWD_MAX_LEN="40"
+	export TMUX_POWERLINE_SEG_PWD_MAX_LEN="20"
 # }
 
 # time.sh {
