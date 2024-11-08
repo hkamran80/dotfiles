@@ -9,7 +9,7 @@ These are my dotfiles for macOS and Linux systems.
 | Zsh | My shell of choice | |
 | Git | Version control | |
 | Homebrew | Package manager ||
-| tmux | Terminal multiplexer ||
+| Tmux | Terminal multiplexer ||
 | [GNU Stow](https://www.gnu.org/software/stow) | Dotfiles management | Check out [Dreams of Autonomy's video](https://www.youtube.com/watch?v=y6XCebnB9gs) for an excellent guide |
 | [fzf](https://github.com/junegunn/fzf) | Fuzzy finder ||
 | [Oh My Posh](https://ohmyposh.dev) | Shell prompt ||
@@ -18,6 +18,16 @@ These are my dotfiles for macOS and Linux systems.
 | [btop](https://github.com/aristocratos/btop) | Resource monitor ||
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | Recursive directory search ||
 | [Neovim](https://neovim.io) | Editor of choice | My favourite Neovim series is [typecraft's Newvim for Newbs](https://www.youtube.com/playlist?list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn) |
+
+### Tmux Plugins
+
+| Name | Description | Notes |
+| -- | -- | -- |
+| [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tpm) | Plugin manager ||
+| [tmux-powerline](https://github.com/erikw/tmux-powerline) | Status bar ||
+| [tmux-fzf](https://github.com/sainnhe/tmux-fzf) | Fuzzy search ||
+| [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) | Session saving and restoration ||
+| [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum) | Automatic session saving ||
 
 ## Usage
 
