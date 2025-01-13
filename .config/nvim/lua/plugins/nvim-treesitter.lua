@@ -24,6 +24,7 @@ return {
 				"vimdoc",
 				"luadoc",
 				"vim",
+				"cpp",
 			},
 			sync_install = false,
 			highlight = {

@@ -17,6 +17,7 @@ return {
 				"jsonls",
 				"pylsp",
 				"eslint",
+				"yamlls",
 			},
 		},
 	},
@@ -75,6 +76,28 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.eslint.setup({
+				capabilities = capabilities,
+			})
+
+			-- TODO: Investigate if the two `require`s can be combined
+			if not require("lspconfig.configs").config_lsp then
+				require("lspconfig.configs").config_lsp = {
+					default_config = {
+						cmd = { "config-lsp" },
+						filetypes = {
+							"sshconfig",
+							"sshdconfig",
+							"fstab",
+							"aliases",
+							-- Matches wireguard configs and /etc/hosts
+							"conf",
+						},
+						root_dir = vim.loop.cwd,
+					},
+				}
+			end
+
+			lspconfig.config_lsp.setup({
 				capabilities = capabilities,
 			})
 
