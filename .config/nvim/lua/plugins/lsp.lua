@@ -18,6 +18,8 @@ return {
 				"pylsp",
 				"eslint",
 				"yamlls",
+				"prismals",
+				"vale_ls",
 			},
 		},
 	},
@@ -76,6 +78,12 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.eslint.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.prismals.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.vale_ls.setup({
 				capabilities = capabilities,
 			})
 
