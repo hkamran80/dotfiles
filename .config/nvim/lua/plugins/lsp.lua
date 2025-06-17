@@ -20,6 +20,7 @@ return {
 				"yamlls",
 				"prismals",
 				"vale_ls",
+				"ruff",
 			},
 		},
 	},
@@ -76,6 +77,15 @@ return {
 			})
 			lspconfig.pylsp.setup({
 				capabilities = capabilities,
+				settings = {
+					pylsp = {
+						plugins = {
+							pylsp_rope = { rename = true },
+							rope_rename = { enabled = false },
+							jedi_rename = { enabled = false },
+						},
+					},
+				},
 			})
 			lspconfig.eslint.setup({
 				capabilities = capabilities,
@@ -86,6 +96,24 @@ return {
 			lspconfig.vale_ls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.ruff.setup({
+				capabilities = capabilities,
+				init_options = {
+					settings = {
+						configurationPreference = "filesystemFirst",
+						lineLength = 80,
+						lint = {
+							select = { "E4", "E7", "E9", "F", "UP", "SIM", "I", "N", "Q" },
+						},
+					},
+				},
+			})
+			lspconfig.asm_lsp.setup({
+				capabilities = capabilities,
+			})
+			-- lspconfig.denols.setup({
+			-- 	capabilities = capabilities,
+			-- })
 
 			-- TODO: Investigate if the two `require`s can be combined
 			if not require("lspconfig.configs").config_lsp then
