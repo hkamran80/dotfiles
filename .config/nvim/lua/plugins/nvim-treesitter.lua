@@ -25,6 +25,7 @@ return {
 				"luadoc",
 				"vim",
 				"cpp",
+				"prisma",
 			},
 			sync_install = false,
 			highlight = {

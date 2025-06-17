@@ -26,6 +26,7 @@ return {
 			markdown = { "markdownlint-cli2" },
 			latex = { "latexindent" },
 			cpp = { "clang-format" },
+			prisma = {},
 		},
 		-- Set default options
 		default_format_opts = {
