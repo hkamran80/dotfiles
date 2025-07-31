@@ -34,5 +34,14 @@ return {
 			},
 			indent = { enable = true },
 		})
+
+		-- Fold configuration
+		vim.opt.foldmethod = "expr"
+		vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+		vim.opt.foldlevel = 99
+		vim.opt.foldlevelstart = 3
+		vim.opt.foldnestmax = 4
+		vim.opt.foldminlines = 5
 	end,
 }
