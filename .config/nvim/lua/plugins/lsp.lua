@@ -1,12 +1,10 @@
 return {
 	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = {
+			{ "mason-org/mason.nvim", opts = {} },
+			"neovim/nvim-lspconfig",
+		},
 		opts = {
 			ensure_installed = {
 				"lua_ls",
@@ -29,11 +27,11 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 		config = function()
-			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
+			vim.lsp.config("*", { capabilities = capabilities })
+
+			vim.lsp.config("lua_ls", {
 				on_init = function(client)
 					if client.workspace_folders then
 						local path = client.workspace_folders[1].name
@@ -63,20 +61,8 @@ return {
 					})
 				end,
 			})
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.dartls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.texlab.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.clangd.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.pylsp.setup({
-				capabilities = capabilities,
+
+			vim.lsp.config("pylsp", {
 				settings = {
 					pylsp = {
 						plugins = {
@@ -87,17 +73,7 @@ return {
 					},
 				},
 			})
-			lspconfig.eslint.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.prismals.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.vale_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.ruff.setup({
-				capabilities = capabilities,
+			vim.lsp.config("ruff", {
 				init_options = {
 					settings = {
 						configurationPreference = "filesystemFirst",
@@ -108,34 +84,20 @@ return {
 					},
 				},
 			})
-			lspconfig.asm_lsp.setup({
-				capabilities = capabilities,
-			})
-			-- lspconfig.denols.setup({
-			-- 	capabilities = capabilities,
-			-- })
 
-			-- TODO: Investigate if the two `require`s can be combined
-			if not require("lspconfig.configs").config_lsp then
-				require("lspconfig.configs").config_lsp = {
-					default_config = {
-						cmd = { "config-lsp" },
-						filetypes = {
-							"sshconfig",
-							"sshdconfig",
-							"fstab",
-							"aliases",
-							-- Matches wireguard configs and /etc/hosts
-							"conf",
-						},
-						root_dir = vim.loop.cwd,
-					},
-				}
-			end
-
-			lspconfig.config_lsp.setup({
-				capabilities = capabilities,
+			vim.lsp.config("config_lsp", {
+				cmd = { "config-lsp" },
+				filetypes = {
+					"sshconfig",
+					"sshdconfig",
+					"fstab",
+					"aliases",
+					-- Matches wireguard configs and /etc/hosts
+					"conf",
+				},
+				root_dir = vim.loop.cwd,
 			})
+			vim.lsp.enable("config_lsp")
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
