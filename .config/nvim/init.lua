@@ -1,4 +1,5 @@
 require("config.lazy")
+require("config.keymaps")
 
 vim.g.mapleader = " "
 
@@ -12,5 +13,3 @@ vim.opt.shiftwidth = 4
 
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
-
--- TODO: Setup nvim-lint
