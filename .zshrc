@@ -41,9 +41,9 @@ zinit cdreplay -q
 zinit snippet OMZL::key-bindings.zsh
 
 ## History
-HISTSIZE=5000
 HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
+HISTSIZE=10000
+SAVEHIST=9000
 HISTDUP=erase
 setopt append_history
 setopt share_history
