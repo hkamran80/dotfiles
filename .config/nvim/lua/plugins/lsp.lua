@@ -22,6 +22,7 @@ return {
 			},
 		},
 	},
+	{ "b0o/schemastore.nvim" },
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPost", "BufNewFile" },
@@ -100,6 +101,47 @@ return {
 			vim.lsp.enable("config_lsp")
 
 			vim.lsp.enable("sourcekit")
+
+			-- Schemas
+			local selected_schemas = {
+				"prettierrc.json",
+				"package.json",
+				"tsconfig.json",
+			}
+			vim.lsp.config("jsonls", {
+				settings = {
+					json = {
+						schemas = require("schemastore").json.schemas({
+							select = selected_schemas,
+							extra = {
+								{
+									description = "Open Banking Tracker Data Schema",
+									fileMatch = "open-banking-tracker-data/data/*/*.json",
+									name = "open-banking-tracker-data",
+									url = "https://raw.githubusercontent.com/not-a-bank/open-banking-tracker-data/refs/heads/master/schema.json",
+								},
+							},
+						}),
+						validate = { enable = true },
+					},
+				},
+			})
+			vim.lsp.config("yamlls", {
+				settings = {
+					yaml = {
+						schemaStore = {
+							-- You must disable built-in schemaStore support if you want to use
+							-- this plugin and its advanced options like `ignore`.
+							enable = false,
+							-- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+							url = "",
+						},
+						schemas = require("schemastore").yaml.schemas({
+							select = selected_schemas,
+						}),
+					},
+				},
+			})
 
 			-- Shortcuts
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
