@@ -21,6 +21,11 @@ return {
 				"ruff",
 				"oxlint",
 			},
+			automatic_enable = {
+				exclude = {
+					"vale_ls",
+				},
+			},
 		},
 	},
 	{ "b0o/schemastore.nvim" },
