@@ -78,6 +78,10 @@ if [[ -f "$PATH_FILE" ]]; then
     source $PATH_FILE
 fi
 
+## Configs
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+
 ## Aliases
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	alias ls='gls --color'
