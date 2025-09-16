@@ -162,9 +162,11 @@ return {
 			})
 
 			-- Shortcuts
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			local keymap_modes = { "n", "v" }
+			vim.keymap.set(keymap_modes, "K", vim.lsp.buf.hover, {})
+			vim.keymap.set(keymap_modes, "gd", vim.lsp.buf.definition, { desc = "See the LSP description" })
+			vim.keymap.set(keymap_modes, "<leader>ca", vim.lsp.buf.code_action, { desc = "See LSP code actions" })
+			vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename with the LSP" })
 		end,
 	},
 	{
