@@ -19,6 +19,7 @@ return {
 				"prismals",
 				"vale_ls",
 				"ruff",
+				"oxlint",
 			},
 		},
 	},
@@ -82,6 +83,13 @@ return {
 						lint = {
 							select = { "E4", "E7", "E9", "F", "UP", "SIM", "I", "N", "Q" },
 						},
+					},
+				},
+			})
+			vim.lsp.config("oxlint", {
+				settings = {
+					oxc = {
+						typeAware = true,
 					},
 				},
 			})
